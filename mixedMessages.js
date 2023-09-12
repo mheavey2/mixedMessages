@@ -23,7 +23,7 @@ function generateMessage(msg) {
   let randomNumber = returnRandom(msg.luckyNumber);
   let randomColor = returnRandom(msg.colourOfTheDay);
 
-  let randomResponse = `"Today's wisdom is: " + ${randomWise} + "Your day's lucky number is:  " + ${randomNumber} + "the best colour of the day is:  " + ${randomColor}`;
+  let randomResponse = `"Today's wisdom is: " + ${randomWise} + "Your day's lucky number is:  " + ${randomNumber} + "the best colour for the day is:  " + ${randomColor}`;
   console.log(randomResponse);
 }
 
