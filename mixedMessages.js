@@ -9,22 +9,22 @@ const message = {
   colourOfTheDay: ["green", "red", "sapphire"],
 };
 
-//iterate through the object, returning random item from each array
-for (messageItem in message) {
-  let randomWise =
-    message.wiseWords[Math.floor(Math.random() * message.wiseWords.length)];
-  let randomNumber =
-    message.luckyNumber[Math.floor(Math.random() * message.luckyNumber.length)];
-  let randomColor =
-    message.colourOfTheDay[
-      Math.floor(Math.random() * message.colourOfTheDay.length)
-    ];
-
-  //combine the 3 random outputs with some text as the final randm response
-  function generateMessage(msg) {
-    let randomResponse = `"Today's wisdom is: " + ${randomWise} + "Your day's lucky number is:  " + ${randomNumber} + "the best colour of the day is:  " + ${randomColor}`;
-    console.log(randomResponse);
+//iterate over array and return random element
+function returnRandom(array) {
+  for (key in array) {
+    let response = array[Math.floor(Math.random() * array.length)];
+    return response;
   }
+}
+
+//combine the 3 random outputs with some text as the final random response
+function generateMessage(msg) {
+  let randomWise = returnRandom(msg.wiseWords);
+  let randomNumber = returnRandom(msg.luckyNumber);
+  let randomColor = returnRandom(msg.colourOfTheDay);
+
+  let randomResponse = `"Today's wisdom is: " + ${randomWise} + "Your day's lucky number is:  " + ${randomNumber} + "the best colour of the day is:  " + ${randomColor}`;
+  console.log(randomResponse);
 }
 
 //call the function
